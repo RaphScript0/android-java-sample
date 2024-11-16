@@ -1,0 +1,23 @@
+{
+  "name": "Android Development Environment",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "settings": {
+    "terminal.integrated.defaultProfile.linux": "bash",
+    "java.home": "/usr/lib/jvm/java-17-openjdk-amd64",
+    "java.configuration.runtimes": [
+      {
+        "name": "JavaSE-17",
+        "path": "/usr/lib/jvm/java-17-openjdk-amd64"
+      }
+    ]
+  },
+  "extensions": [
+    "vscjava.vscode-java-pack",
+    "ms-azuretools.vscode-docker",
+    "android-studio.extension-pack"
+  ],
+  "postCreateCommand": "sdkmanager --install 'platform-tools' 'platforms;android-33' 'build-tools;33.0.0'",
+  "remoteUser": "vscode"
+}
